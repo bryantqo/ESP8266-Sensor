@@ -5,7 +5,7 @@
 
 
 #define SETTING_OFFSET 100
-#define APP_VERSION 13
+#define APP_VERSION 12
 #define APP_HEADER "HAE"
 
 //Max sizes in eeprom

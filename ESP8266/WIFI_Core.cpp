@@ -31,7 +31,16 @@ long wifiRate = 500;
 
 
 
+bool wifiConnected()
+{
+  return WiFi.status() == WL_CONNECTED;
+}
 
+void attemptReconnect()
+{
+  //Not perfect but better than nothing
+  setupWifi();
+}
 
 //void configModeCallback (WiFiManager *myWiFiManager) {
   //Serial.println("Entered config mode");

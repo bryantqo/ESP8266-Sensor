@@ -11,3 +11,6 @@ void saveConfigCallback ();
 void setupWifi();
 void manuallyStartWifiPortal();
 void wifiStep();
+
+bool wifiConnected();
+void attemptReconnect();

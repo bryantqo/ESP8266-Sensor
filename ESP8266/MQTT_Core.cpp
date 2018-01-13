@@ -44,6 +44,20 @@ void setupMQTT()
   client.setCallback(mqtt_callback);
 
   int connect_cnt = 0, connect_cnt_max = 5;
+
+  while(!wifiConnected())
+  {
+    Serial.println("Wifi is not connected ... waiting for a connection");
+    connect_cnt++;
+  }
+
+  if(!wifiConnected())
+  {
+    manuallyStartWifiPortal();
+    
+  }
+
+  connect_cnt = 0;
   while (!client.connected() && connect_cnt < connect_cnt_max) {
     Serial.print("Attempting MQTT connection...");
     // Create a random client ID

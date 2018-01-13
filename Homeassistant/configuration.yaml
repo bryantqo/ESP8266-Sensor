@@ -1,0 +1,19 @@
+mqtt:
+
+sensor:
+  - platform: mqtt
+    state_topic: '/Home/Temp/<Device Name Here>'
+    name: '<Device Name Here> Temp (1)'
+    unit_of_measurement: '°C'
+    value_template: '{{ value_json.temp }}'
+  - platform: mqtt
+    name: "<Device Name Here> Temp Online"
+    state_topic: "/Home/Sensors/<Device Name Here>"
+    payload_on: "On"
+    payload_off: "Off"
+    availability_topic: "home/test/availability"
+    payload_available: "online"
+    payload_not_available: "offline"
+    qos: 0
+    device_class: opening
+    value_template: '{{ value_json.status }}'
